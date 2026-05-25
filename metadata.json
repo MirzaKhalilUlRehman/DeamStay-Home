@@ -1,0 +1,6 @@
+{
+  "name": "DreamStay Homes",
+  "description": "A premium luxury real estate marketplace to buy, rent, and sell properties under DreamStay Homes with dynamic search, owner dashboard, direct contact display, and active WhatsApp engagement.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

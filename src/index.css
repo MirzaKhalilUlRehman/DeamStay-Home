@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #f8fafc;
+  --bg-deep: #ffffff;
+  --bg-blue: #f1f5f9;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-hover-bg: rgba(241, 245, 249, 0.95);
+  --accent-primary: #2563eb;         /* Royal Blue */
+  --accent-light: #3b82f6;           /* Electric Blue */
+  --accent-secondary: #0f172a;       /* Black/Slate */
+  --accent-secondary-light: #475569; /* Muted slate */
+  --accent-very-light: #eff6ff;      /* Fresh light ice blue */
+  --text-main: #000000;              /* Black text */
+  --text-muted: #475569;             /* Slate 600 */
+}
+
+.dark {
+  --bg-dark: #000000;                /* Pure Black for supreme contrast */
+  --bg-deep: #020617;                /* Sleek black-blue */
+  --bg-blue: #090e1a;                /* Deep dark midnight blue */
+  --card-bg: rgba(15, 23, 42, 0.65);
+  --card-hover-bg: rgba(30, 41, 59, 0.75);
+  --accent-primary: #3b82f6;         /* Bright electric blue */
+  --accent-light: #60a5fa;           /* Glow blue */
+  --accent-secondary: #2563eb;       /* Primary Blue */
+  --accent-secondary-light: #60a5fa;
+  --accent-very-light: #1e3a8a;      /* Navy accent */
+  --text-main: #f8fafc;              /* Crisp slate */
+  --text-muted: #94a3b8;             /* Slate 400 */
+}
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-serif: "Poppins", serif;
+  --font-mono: "Poppins", monospace;
+
+  /* Remapped to pristine Blue and Black custom parameters */
+  --color-luxury-bg-dark: var(--bg-dark);
+  --color-luxury-bg-deep: var(--bg-deep);
+  --color-luxury-bg-blue: var(--bg-blue);
+  --color-luxury-card: var(--card-bg);
+  --color-luxury-card-hover: var(--card-hover-bg);
+  --color-luxury-purple: var(--accent-primary);
+  --color-luxury-purple-light: var(--accent-light);
+  --color-luxury-blue: var(--accent-secondary);
+  --color-luxury-blue-light: var(--accent-secondary-light);
+  --color-luxury-gold: var(--accent-primary);
+  --color-luxury-gold-muted: var(--accent-secondary);
+  --color-luxury-gold-bright: var(--accent-very-light);
+}
+
+/* Base resets & utilities */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.15); /* Blue tinted border */
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: var(--card-hover-bg);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Premium radial ambient glows */
+.glow-purple {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.15);
+}
+
+/* Buttons with premium blue gradient */
+.btn-premium {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+}
+
+.btn-premium:hover {
+  background-position: 100% 50%;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.35), 0 0 40px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Scrollbar styling */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
